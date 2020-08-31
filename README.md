@@ -1,5 +1,39 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+It consists of a simple React app and an express.js backend with two API endpoints.
+
+## Local Installation
+
+Clone the repository. Run `yarn install` in the root directory. Create a `.env` file containing the following:
+```
+USERNAME=your-chosen-username
+PASSWORD=your-chosen-password
+```
+
+## Running the project
+
+Use `yarn start` to run the React app, it will be accessible at `http://localhost:3000`. Use `yarn start-server` to run the API, it will be accessible at `http://localhost:4000`.
+
+## Using the app
+
+Use your `USERNAME` and `PASSWORD` and input any card number. Click submit to display the mock data from the API.
+
+## API Description
+
+### GET /check-status
+
+No payload. Returns the string "API running!".
+
+### GET /card/:cardNumber
+
+No payload. Set the Authorization Header to `Basic: { USERNAME:PASSWORD encoded in base64 }`. Returns
+```
+{
+  validTill: string // format D.M.YYYY
+  cardDetails: string
+}
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
