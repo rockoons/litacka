@@ -1,0 +1,17 @@
+label {
+  display: block;
+  text-align: right;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-right: 50vw;
+}
+
+input {
+  margin-left: 2vw;
+  width: 10vw;
+}
+
+form > input {
+  display: block;
+  margin-left: 40vw;
+}

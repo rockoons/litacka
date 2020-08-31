@@ -5,7 +5,7 @@ import { config } from './config'
 import { authMiddleware } from './auth'
 
 const app = express()
-const port = config.port || 3001
+const port = 4000
 
 app.get('/check-status', (req, res) => {
   res.send('API running!')
@@ -22,6 +22,6 @@ app.get('/card/:cardNumber', async (req, res) => {
 app.listen(port, () => {
   console.log(`Litacka API listening at http://localhost:${port}`)
   if (!config.username || !config.password) {
-    console.error('Missing USERNAME and/or PASSWORD enviromental variables')
+    throw new Error('Missing USERNAME and/or PASSWORD enviromental variables')
   }
 })
